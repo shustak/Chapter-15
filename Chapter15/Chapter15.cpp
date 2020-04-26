@@ -45,13 +45,13 @@ int main()
         win.attach(y);
         win.wait_for_button();
 
-        //Part 1
-        
-        const int r_min = -10;
+        //Part 1 
+        const int r_min = -10;//Range[-10,11]
         const int r_max = 11;
         const int n_points = 400;
 
-        Function s(one, r_min, r_max, orig, n_points);
+        //Draw "Function graphing" one
+         Function s(one, r_min, r_max, orig, n_points);
         win.attach(s);
         win.wait_for_button();
 
@@ -60,7 +60,7 @@ int main()
         win.attach(s);
         win.wait_for_button();*/
 
-        //Part 4
+        //Part 4 Draw "Function graphing" slope
         Function s2(slope, r_min, r_max, orig, n_points, x_scale, y_scale);
         //Part 5
         Text ts2(Point(100, y_orig + y_orig / 2-20), "x/2");
@@ -68,20 +68,21 @@ int main()
         win.attach(ts2);
         win.wait_for_button();
 
-        //Part 6
+        //Part 6 Draw "Function graphing" square
         Function s3(square, r_min, r_max, orig, n_points, x_scale, y_scale);
         win.attach(s3);
         win.wait_for_button();
 
-        //Part 7
+        //Part 7 Draw "Function graphing" cos with lambda function
         Function s4{ [](double x) {return cos(x); },
         r_min, r_max, orig, 400, 20, 20 };
-        //Part 8
+
+        //Part 8 Create graphing cos in the blue color
         s4.set_color(Color::blue);
         win.attach(s4);
         win.wait_for_button();
 
-        //Part 9
+        //Part 9 Draw "Function graphing" sloping_cos
         Function s5(sloping_cos, r_min, r_max, orig, 400, 20, 20);
         win.attach(s5);
         win.wait_for_button();
